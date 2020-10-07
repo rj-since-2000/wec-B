@@ -1,11 +1,23 @@
-# chatbot wec-B
+# Chatbot [wec-B]
 
 A new project based on Google Dialogflow.
-Dialogflow is a natural language understanding platform that makes it easy to design and integrate a conversational user interface into your mobile app, web application, device, bot, interactive voice response system, and so on. Using Dialogflow, you can provide new and engaging ways for users to interact with your product.
+Dialogflow is a Google-owned developer of human-computer interaction technologies based on natural language conversations. The company is best known for creating the Assistant, a virtual buddy for Android, iOS, and Windows Phone smartphones that perform tasks and answers users’ question in a natural language.
 
-# screenshot
+## Chatbot Definition
+A chatbot is a program that can conduct an intelligent conversation. It should be able to convincingly simulate human behavior.
+
+## Screenshot
 
 <img src = https://user-images.githubusercontent.com/68644104/95351554-f7516280-08de-11eb-82cf-1d3e7adc7b8e.png>
+
+## Setup
+
+1. To use services provided by Google Cloud, you must create a project.
+2. Create a service account and download the private key file as a JSON file that contains your key downloads to your computer.
+3. In your project open a folder named “assets”. Replace the existing JSON file with the file which you downloaded from Google Cloud Platform (GCP) into the assets folder.
+4. Open “pubspec.yaml” and save the file as [name of your downloaded JSON file], we should use the same name in our pubspec.yaml file as in assets folder.
+
+[NOTE/Warning] The file already existing as JSON file in assets folder is only for the develpoment purpose and should not be used by anyone without the permission of the author.
 
 ## Getting Started
 
