@@ -295,6 +295,20 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
                       ],
                     ),
                   ),
+                  Container(
+                    height: 1,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [
+                          Colors.black,
+                          Colors.orange,
+                          Colors.black,
+                        ],
+                      ),
+                    ),
+                  ),
                   Flexible(
                       child: ListView.builder(
                     padding: EdgeInsets.all(8.0),
