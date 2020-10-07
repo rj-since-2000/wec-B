@@ -10,6 +10,11 @@ A chatbot is a program that can conduct an intelligent conversation. It should b
 
 <img src = https://user-images.githubusercontent.com/68644104/95351554-f7516280-08de-11eb-82cf-1d3e7adc7b8e.png>
 
+## Data
+
+Uses data from Google Spreadsheet 
+Link - https://docs.google.com/spreadsheets/d/1GRv7jN_AeL81XR2H620Bsin8EL3kcz3ZE71LvteDJ1Y/edit#gid=0
+
 ## Setup
 
 1. To use services provided by Google Cloud, you must create a project.
