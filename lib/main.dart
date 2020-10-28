@@ -237,33 +237,43 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/background.png'),
-            fit: BoxFit.fill,
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: MediaQuery.of(context).size.height >
+                        MediaQuery.of(context).size.width
+                    ? AssetImage('assets/screenshot_mobile_view.png')
+                    : AssetImage('assets/background.png'),
+                fit: MediaQuery.of(context).size.height >
+                        MediaQuery.of(context).size.width
+                    ? BoxFit.fill
+                    : BoxFit.fill,
+              ),
+              color: Colors.black,
+            ),
+            height: double.infinity,
+            alignment: Alignment.center,
           ),
-        ),
-        height: double.infinity,
-        alignment: Alignment.center,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Card(
+          Positioned(
+            right: MediaQuery.of(context).size.width * 0.1,
+            bottom: MediaQuery.of(context).size.height * 0.2,
+            child: Card(
               elevation: 10,
               color: Colors.black,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
               child: Container(
+                width: MediaQuery.of(context).size.height >
+                        MediaQuery.of(context).size.width
+                    ? MediaQuery.of(context).size.width * 0.8
+                    : MediaQuery.of(context).size.width * 0.25,
+                height: MediaQuery.of(context).size.height * 0.6,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(10)),
-                constraints: BoxConstraints(
-                  maxHeight: MediaQuery.of(context).size.height * 0.7,
-                  //minHeight: 400,
-                  maxWidth: MediaQuery.of(context).size.width * 0.3,
+                  border: Border.all(color: Colors.black, width: 1.5),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                //minWidth: 250),
                 child: Column(children: <Widget>[
                   AppBar(
                     backgroundColor: Colors.black,
@@ -339,12 +349,30 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
                 ]),
               ),
             ),
-            Container(
-              width: 180,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
+
+      //       Container(
+      //   decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //       image: AssetImage('assets/background.png'),
+      //       fit: BoxFit.fill,
+      //     ),
+      //   ),
+      //   height: double.infinity,
+      //   alignment: Alignment.center,
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.end,
+      //     children: [
+      //       ,
+      //       Container(
+      //         width: MediaQuery.of(context).size.width * 0.2,
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
+    //);
   }
 }

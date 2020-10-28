@@ -12,6 +12,7 @@ class ChatMessage extends StatelessWidget {
       Container(
         margin: const EdgeInsets.only(right: 16.0),
         child: CircleAvatar(
+          radius: 15,
           backgroundColor: Colors.black,
           child: Image.asset('assets/webclub-logo-orange.png'),
         ),
@@ -64,6 +65,7 @@ class ChatMessage extends StatelessWidget {
       Container(
         margin: const EdgeInsets.only(left: 16.0),
         child: CircleAvatar(
+          radius: 15,
           //backgroundColor: Colors.black,
           child: Image.asset('assets/profile.png'),
         ),

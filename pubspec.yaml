@@ -53,6 +53,7 @@ flutter:
     - assets/background.png
     - assets/webclub-logo-orange.png
     - assets/profile.png
+    - assets/screenshot_mobile_view.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
