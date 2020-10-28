@@ -237,122 +237,120 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Stack(
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: MediaQuery.of(context).size.height >
-                          MediaQuery.of(context).size.width
-                      ? AssetImage('assets/screenshot_mobile_view.png')
-                      : AssetImage('assets/background.png'),
-                  fit: MediaQuery.of(context).size.height >
-                          MediaQuery.of(context).size.width
-                      ? BoxFit.fill
-                      : BoxFit.fill,
-                ),
-                color: Colors.black,
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: MediaQuery.of(context).size.height >
+                        MediaQuery.of(context).size.width
+                    ? AssetImage('assets/screenshot_mobile_view.png')
+                    : AssetImage('assets/background.png'),
+                fit: MediaQuery.of(context).size.height >
+                        MediaQuery.of(context).size.width
+                    ? BoxFit.fill
+                    : BoxFit.fill,
               ),
-              height: double.infinity,
-              alignment: Alignment.center,
+              color: Colors.black,
             ),
-            Positioned(
-              right: MediaQuery.of(context).size.width * 0.1,
-              bottom: MediaQuery.of(context).size.height * 0.2,
-              child: Card(
-                elevation: 10,
-                color: Colors.black,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: Container(
-                  width: MediaQuery.of(context).size.height >
-                          MediaQuery.of(context).size.width
-                      ? MediaQuery.of(context).size.width * 0.8
-                      : MediaQuery.of(context).size.width * 0.25,
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(children: <Widget>[
-                    AppBar(
-                      backgroundColor: Colors.black,
-                      centerTitle: true,
-                      title: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              "wec-B",
-                              overflow: TextOverflow.fade,
-                              style: TextStyle(
-                                  color: Colors.orange,
-                                  backgroundColor: Colors.black,
-                                  fontWeight: FontWeight.bold),
+            height: double.infinity,
+            alignment: Alignment.center,
+          ),
+          Positioned(
+            right: MediaQuery.of(context).size.width * 0.1,
+            bottom: MediaQuery.of(context).size.height * 0.2,
+            child: Card(
+              elevation: 10,
+              color: Colors.black,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: Container(
+                width: MediaQuery.of(context).size.height >
+                        MediaQuery.of(context).size.width
+                    ? MediaQuery.of(context).size.width * 0.8
+                    : MediaQuery.of(context).size.width * 0.25,
+                height: MediaQuery.of(context).size.height * 0.6,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 1.5),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(children: <Widget>[
+                  AppBar(
+                    backgroundColor: Colors.black,
+                    centerTitle: true,
+                    title: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            "wec-B",
+                            overflow: TextOverflow.fade,
+                            style: TextStyle(
+                                color: Colors.orange,
+                                backgroundColor: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "NITK WEB CLUB ASSISTANT",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 12,
+                              backgroundColor: Colors.black,
+                              color: Colors.grey,
                             ),
                           ),
-                          Expanded(
-                            child: Text(
-                              "NITK WEB CLUB ASSISTANT",
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontSize: 12,
-                                backgroundColor: Colors.black,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          )
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 1,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [
+                          Colors.black,
+                          Colors.orange,
+                          Colors.black,
                         ],
                       ),
                     ),
-                    Container(
-                      height: 1,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [
-                            Colors.black,
-                            Colors.orange,
-                            Colors.black,
-                          ],
-                        ),
+                  ),
+                  Flexible(
+                      child: ListView.builder(
+                    padding: EdgeInsets.all(8.0),
+                    reverse: true,
+                    itemBuilder: (_, int index) => _messages[index],
+                    itemCount: _messages.length,
+                  )),
+                  Divider(height: 1.0),
+                  if (isTyping == true)
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.black,
+                        child: Image.asset('assets/webclub-logo-orange.png'),
+                      ),
+                      title: Text(
+                        'wec-B is typing...',
+                        style: TextStyle(color: Colors.orange),
                       ),
                     ),
-                    Flexible(
-                        child: ListView.builder(
-                      padding: EdgeInsets.all(8.0),
-                      reverse: true,
-                      itemBuilder: (_, int index) => _messages[index],
-                      itemCount: _messages.length,
-                    )),
-                    Divider(height: 1.0),
-                    if (isTyping == true)
-                      ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.black,
-                          child: Image.asset('assets/webclub-logo-orange.png'),
-                        ),
-                        title: Text(
-                          'wec-B is typing...',
-                          style: TextStyle(color: Colors.orange),
-                        ),
-                      ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).cardColor,
-                          borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(10),
-                              bottomLeft: Radius.circular(10))),
-                      child: _buildTextComposer(),
-                    ),
-                  ]),
-                ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(10),
+                            bottomLeft: Radius.circular(10))),
+                    child: _buildTextComposer(),
+                  ),
+                ]),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
 
       //       Container(
